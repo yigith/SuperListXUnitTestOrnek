@@ -8,9 +8,12 @@ namespace SuperListXUnitTestOrnek
         {
             SuperList<string> listem = new SuperList<string>();
 
-            listem.Ekle("Ali");
-            listem.Ekle("Onur");
-            listem.Ekle("Selçuk");
+            //listem.Ekle("Ali");
+            //listem.Ekle("Onur");
+            //listem.Ekle("Selçuk");
+
+            string[] isimler = { "Ali", "Onur", "Selçuk" };
+            listem.CokluEkle(isimler);
 
             foreach (var item in listem)
             {

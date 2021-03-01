@@ -9,15 +9,23 @@ namespace SuperListXUnitTestOrnek
     {
         List<T> veriler = new List<T>();
 
-        public void Ekle(T obj)
+        public virtual void Ekle(T obj)
         {
             veriler.Add(obj);
             // veriler.Add(obj); // sırf testten fail olması için yapıyorum
         }
 
-        public void Sil(T obj)
+        public virtual void Sil(T obj)
         {
             veriler.Remove(obj);
+        }
+
+        public virtual void CokluEkle(IEnumerable<T> items)
+        {
+            foreach (var item in items)
+            {
+                Ekle(item);
+            }
         }
 
         public IEnumerator<T> GetEnumerator()
